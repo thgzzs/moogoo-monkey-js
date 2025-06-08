@@ -12,6 +12,13 @@
   const ELIMINATION_DELAY = 2500;
   const TEMP_MESSAGE_DELAY = 1000;
   const SWOOP_DURATION = 500;
+  const FLIP_SOUND_SRC = 'sound/flip.mp3';
+  const playFlipSound = () => {
+    try {
+      const audio = new Audio(FLIP_SOUND_SRC);
+      audio.play().catch(() => {});
+    } catch (_) {}
+  };
   const randomInt = (min, max) =>
     Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -378,6 +385,7 @@
     updateMonkeyDisplay(target);
     const pileEl = document.querySelector(`#cardPileContainer .card-pile[data-color="${target.color}"]`);
     if (pileEl) {
+      playFlipSound();
       animateCardMove(cardEl, pileEl, () => {
         const existing = pileEl.firstElementChild;
         if (existing) {
@@ -641,6 +649,7 @@
         const pileEl = document.querySelector(`#cardPileContainer .card-pile[data-color="${target.color}"]`);
         setTimeout(() => {
           if (!isLocked && !gameOver && playerTypes[currentPlayer] === 'bot') {
+            playFlipSound();
             animateBotCard(card, pileEl, () => {
               const existing = pileEl.firstElementChild;
               if (existing) {
@@ -701,6 +710,7 @@
     round = 1;
     actionState = 'initialBet';
     gameOver = false;
+    isLocked = false;
     globalDeck = createGlobalDeck();
     for (let i = 0; i < PLAYER_FRUITS.length; i++) decks[i] = [];
     monkeyTopContainer.innerHTML = '';
@@ -708,6 +718,7 @@
     cardPileContainer.innerHTML = '';
     turnDisplay.textContent = '';
     updateScore();
+    updateDeckDisplay();
     mainMenu.style.display = 'flex';
     const btn = document.getElementById('restartButton');
     if (btn) btn.remove();
