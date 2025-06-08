@@ -1,8 +1,3 @@
-diff --git a/README.md b/README.md
-index 026fd834c432a372e866bec0aaefd65689a37866..383aaa960e2a06fbb1a03b19318217e0b8aa09a8 100644
---- a/README.md
-+++ b/README.md
-@@ -1,12 +1,75 @@
  # Moogoo Monkey JS
  
  https://thgzzs.github.io/moogoo-monkey-js/
