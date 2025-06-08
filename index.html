@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moogoo Monkey JS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Main Menu Overlay -->
+  <div id="mainMenu">
+    <div class="menu-dialog" id="menu-mode-dialog">
+      <div class="container">
+        <div class="hint">Choose your game mode</div>
+        <div class="option-bar">
+          <div class="option" onclick="startGame('single')">
+            <div class="emoji">🐵</div>
+            <span>SINGLE PLAYER</span>
+          </div>
+          <div class="option" onclick="startGame('two')">
+            <div class="emoji">🐵🐵</div>
+            <span>2 PLAYERS</span>
+          </div>
+          <div class="option" onclick="startGame('three')">
+            <div class="emoji-3">
+              <div class="top">🐵</div>
+              <div class="bottom">🐵🐵</div>
+            </div>
+            <span>3 PLAYERS</span>
+          </div>
+        </div>
+      </div>
+    </div>   
+  </div>
+
+  <div id="monkeyEmoji">🐵</div>
+  <div class="turn-display" id="turnDisplay"></div>
+  
+  <!-- Game Containers -->
+  <div id="gameContainer">
+    <div id="monkeyTopContainer"></div>
+    <div id="cardPileContainer"></div>
+  </div>
+  <div class="card-container" id="cardContainer"></div>
+  <div id="scoreContainer">
+    <div class="score-title">Score</div>
+    <div class="score-item">🥥 <span class="score-number">0</span></div>
+    <div class="score-item">🍉 <span class="score-number">0</span></div>
+    <div class="score-item">🍍 <span class="score-number">0</span></div>
+  </div>
+  <!-- Deck Display -->
+  <div id="deckDisplay" class="deck-display">Cards 48</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
