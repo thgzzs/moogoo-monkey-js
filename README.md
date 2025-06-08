@@ -1,5 +1,7 @@
 # Moogoo Monkey JS
 
+https://thgzzs.github.io/moogoo-monkey-js/
+
 This project is a browser-based card game. The original implementation placed all markup, style, and JavaScript in a single file. The repository now organizes the code into separate HTML, CSS, and JS files for easier maintenance.
 
 ## Files
