@@ -57,3 +57,12 @@ If all cards are exhausted before a third monkey is eliminated, the game ends in
 ### Starting the Game
 
 Open `index.html` in a modern browser and choose a mode from the menu. You can play solo against bots or with up to three human players on the same device.
+
+## Multiplayer Server
+
+A simple Node.js server provides lobby management for online play. To run it locally:
+
+1. Install dependencies with `npm install`.
+2. Start the server with `npm start` (listens on port 3000 by default).
+3. Clients connect via WebSocket to `ws://localhost:3000`.
+
